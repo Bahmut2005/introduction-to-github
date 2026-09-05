@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "phaneslight": {
+      "source": {
+        "source": "github",
+        "repo": "Aloim/phaneslightplugin"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "phaneslight@phaneslight": true
+  }
+}
