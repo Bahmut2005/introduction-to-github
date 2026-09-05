@@ -233,5 +233,9 @@
   "notes": {
     "testTree": "Phase 2.5 Step 1b (tests/ scaffolding) was deliberately not performed. This repository is courseware with no source code and no test runner; a tests/ tree here would be inert scaffolding. Recorded as a scope decision taken by the user at bootstrap, not as an omission.",
     "stampedTrees": "stampedTrees is deliberately limited to the documentation root. The course content trees (.github/steps/, .github/workflows/) are NOT stamped: new-file applies the module stamp `# <module> | <description>` to non-docRoot targets, and in a learner-facing .md file that line renders as an H1 heading, corrupting the course content the repository exists to deliver. Guarding those trees would break the product to enforce a convention it does not need."
+  },
+  "lastRun": {
+    "ref": "3eaba38334863891ca4d78be74dbd25652ed81fe",
+    "date": "2026-09-05"
   }
 }

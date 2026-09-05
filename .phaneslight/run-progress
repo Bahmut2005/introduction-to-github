@@ -1,3 +1,9 @@
 2026-09-05 | Phase 0 STARTED (initial setup run, PhanesLight v3.7.2) | ledger opened
 2026-09-05 | Phase 0 DONE → next Phase 1 | MCP x4 installed and reachable; frontend-design install FAILED (no /plugin), recorded; plugin hooks unregistered, recorded
 2026-09-05 | Phase 1 DONE → next Phase 2 | courseware repo; modules workflows/steps/images; no build, no tests, no API, no UI
+2026-09-05 | Phase 2 DONE → next Phase 2.5 | root+3 module CLAUDE.md, CLAUDE.local.md register; both hot files OK
+2026-09-05 | Phase 2.5 DONE → next Phase 3 | 26 templates installed, regen-registry+api-diff generated, hooks verified on disk (NOT armed), tests/ tree skipped by scope
+2026-09-05 | Phase 3 DONE → next Phase 4 | 8 workflows codified: 5 change-type + backlog-triage, audit, snapshot-refresh; no ui-change (no UI surface)
+2026-09-05 | Phase 4 DONE → next Phase 5 | 5 agents generated; ladder checks run; no-fork clause defect found and repaired in worker/mechanic/closure
+2026-09-05 | Phase 5 DONE | marker=1, version 3.7.2 stamped, manifest 48 artifacts, lastRun recorded
+CLOSED, run complete
