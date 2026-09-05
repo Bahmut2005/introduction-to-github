@@ -1,0 +1,35 @@
+# phaneslight workflow | Replace or re-link course screenshots.
+name: screenshot-refresh
+kind: change
+tier: T2
+trigger: "A screenshot no longer matches GitHub's current interface, or a step needs a different one."
+
+scope:
+  touches: [images, steps]
+  note: "Always at least two modules, because the inbound link lives in the step prose."
+
+steps:
+  - id: 1
+    do: "Load documentation/registry/images.md and images/CLAUDE.md."
+    by: orchestrator
+  - id: 2
+    do: "Find every inbound reference to the affected screenshot across .github/steps/ and README.md. This is an enumeration task: use semble, then verify each hit by reading the file."
+    by: "orchestrator or worker"
+  - id: 3
+    do: "Replace the image and update every inbound reference in the SAME change set. A renamed file with a stale link is a broken step."
+    by: "orchestrator or worker"
+  - id: 4
+    do: "Record the screenshot → step mapping you just established in documentation/registry/images.md. That cross-reference does not exist anywhere else and rebuilding it costs the next agent the same sweep."
+    by: orchestrator
+  - id: 5
+    do: "Closure: verify every image reference in every step file and README.md resolves to a file on disk."
+    by: closure
+
+acceptance:
+  - "Every image reference in .github/steps/*.md and README.md resolves."
+  - "No orphaned PNG left in images/ that nothing references, unless deliberately retained and noted."
+  - "The screenshot's accuracy against live GitHub is reported as VISUAL: UNVERIFIED with a user-eyeball request. No agent here can verify it."
+
+failure_modes_closed:
+  - "Claiming a screenshot is current. Nothing in this repository can check that. Always flag it for a human."
+  - "Renaming for tidiness and breaking silent inbound links. Step 2 is not optional."

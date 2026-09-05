@@ -35,3 +35,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Claude Code local register (machine-local, not shared)
+CLAUDE.local.md
+
+# Serena MCP local project state (regenerated on demand)
+.serena/

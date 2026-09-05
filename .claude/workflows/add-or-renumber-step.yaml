@@ -1,0 +1,41 @@
+# phaneslight workflow | Add, remove or renumber a course step. The cross-cutting change.
+name: add-or-renumber-step
+kind: change
+tier: T3
+trigger: "Any request that changes the NUMBER of steps or their order."
+always_T3: true
+rationale: >-
+  A step number is asserted in the step filename, the workflow filename, that workflow's from_step
+  and to_step, and the cursor value it gates on. Nothing in this repository checks that those
+  agree, and nothing errors when they do not: the learner simply stops advancing. This is the one
+  change here that genuinely earns a plan.
+
+steps:
+  - id: 1
+    do: "Write a plan under documentation/plans/implementation/ before touching anything. Enumerate, per affected step, all five assertion sites."
+    by: orchestrator
+  - id: 2
+    do: "Plan review at launch: the orchestrator's FIRST act is to dispatch the reviewer against the plan, before any execution step. On CRIT or HIGH, stop and take it to the user."
+    by: reviewer
+  - id: 3
+    do: "Build the current-state map: every step file, every workflow, every from_step/to_step, the cursor. This is a genuine enumeration sweep, so use semble; dispatch a mechanic to fetch and digest only if the material exceeds ~2,000 tokens."
+    by: "orchestrator, or mechanic for retrieval"
+  - id: 4
+    do: "Apply the renumbering as one coordinated change set through batch-apply. Never land a partial renumber: a half-renumbered chain is a broken course."
+    by: "orchestrator or worker"
+  - id: 5
+    do: "Update .github/steps/-step.txt only if the STARTING step changed. It is the cursor, not a counter."
+    by: orchestrator
+  - id: 6
+    do: "Closure between phases and at close. NO-SUCH-COMMAND for duty 2, then walk the whole chain end to end."
+    by: closure
+
+acceptance:
+  - "The chain is unbroken from the starting cursor value to the terminal state, with a step file at every target."
+  - "Every workflow's from_step matches its filename prefix."
+  - "No orphaned step file and no workflow pointing at a missing one."
+  - "Every inbound reference to a renamed file was updated in the same change set."
+
+failure_modes_closed:
+  - "Renumbering prose and forgetting the workflow, or vice versa. Step 1 enumerates all five sites up front."
+  - "Landing the change in pieces across several commits, leaving the course broken in between."

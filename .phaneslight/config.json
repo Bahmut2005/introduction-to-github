@@ -1,0 +1,237 @@
+{
+  "phanesLightVersion": "3.7.2",
+  "projectSlug": "introduction-to-github",
+  "mcpConsent": {
+    "granted": true,
+    "date": "2026-09-05",
+    "version": "3.7.2"
+  },
+  "primaryLanguage": "Markdown + YAML (GitHub Actions workflows)",
+  "buildSystem": "none; the course is driven by GitHub Actions on the learner's fork",
+  "modules": [
+    "workflows",
+    "steps",
+    "images"
+  ],
+  "commentSyntax": "#",
+  "docRoot": "documentation",
+  "stampedTrees": [
+    "documentation"
+  ],
+  "extractor": {
+    "mode": "none",
+    "reason": "Courseware repository. No source code, no exported symbols, and no network-facing API contract (no OpenAPI/SDL/.proto, no route or handler definitions). Symbol extraction has no substrate, so regen-registry emits an empty baseline with an explicit no-substrate reason rather than a fabricated one, and api-diff reports NO-BASELINE. Phase 1 API-surface detection: negative."
+  },
+  "buildCommand": null,
+  "typecheckCommand": null,
+  "testCommand": null,
+  "verificationNote": "This project has no build, typecheck or test command. Closure duty 2 (independently re-run build/typecheck/test) has no command to run here and MUST report NO-SUCH-COMMAND rather than claim a pass. The project's real verification surface is the five GitHub Actions workflows in .github/workflows, which only execute on a learner's fork in response to their course actions and cannot be run from this repository.",
+  "uiSurface": {
+    "present": false,
+    "reason": "No rendered user interface. The repository ships Markdown and PNG screenshots; nothing renders a UI that a viewport capture could verify. The Visual Evidence Mandate generates no wiring here and no ui-change workflow is codified."
+  },
+  "orchestratorStepThreshold": 5,
+  "templates": {
+    "version": "3.7.2",
+    "source": "fetched"
+  },
+  "capabilities": {
+    "inventoryDate": "2026-09-05",
+    "selection": [
+      {
+        "name": "context7",
+        "type": "mcp",
+        "scope": "project",
+        "authOk": true,
+        "source": "standard",
+        "selected": true
+      },
+      {
+        "name": "deepwiki",
+        "type": "mcp",
+        "scope": "project",
+        "authOk": true,
+        "source": "standard",
+        "selected": true
+      },
+      {
+        "name": "serena",
+        "type": "mcp",
+        "scope": "project",
+        "authOk": true,
+        "source": "standard",
+        "selected": true
+      },
+      {
+        "name": "semble",
+        "type": "mcp",
+        "scope": "user",
+        "authOk": true,
+        "source": "standard",
+        "selected": true
+      },
+      {
+        "name": "frontend-design",
+        "type": "plugin",
+        "scope": "user",
+        "authOk": false,
+        "source": "standard",
+        "selected": true
+      },
+      {
+        "name": "github",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Slack",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Notion",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Google_Drive",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Canva",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Granola",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Faces_App",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Zapier",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "higgsfield",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "imagine_art",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      },
+      {
+        "name": "Claude_Code_Remote",
+        "type": "mcp",
+        "scope": "session-harness",
+        "authOk": true,
+        "source": "detected",
+        "selected": false
+      }
+    ],
+    "selectionNote": "The five standard entries were selected. Every 'detected' entry is a server injected by this remote Claude Code session's harness, not configured via `claude mcp` and not present in a local session; each was evaluated against the Phase 3 hard gate (a) and none completes the sentence 'granted because this project has ___' for a courseware repository, so none is granted and none appears in the Installed Capability Register. The github MCP additionally fails criterion (d): ~90 tools of schema for work the `gh` CLI does at zero schema cost.",
+    "granted": [
+      {
+        "name": "semble",
+        "type": "mcp",
+        "agents": [
+          "introduction-to-github-orchestrator",
+          "introduction-to-github-worker"
+        ],
+        "purpose": "Indexed hybrid search across the course prose and workflow YAML before any grep-and-read sweep; the enumeration workload (every step file referencing a given image, every workflow writing a given step) is exactly what it exists for.",
+        "matched": "The 5 step Markdown files and 5 Actions workflow files identified in Phase 1, which cross-reference each other and the images/ tree by name.",
+        "fallback": "Grep/Glob sweeps, which cost tokens but never correctness."
+      },
+      {
+        "name": "context7",
+        "type": "mcp",
+        "agents": [
+          "introduction-to-github-orchestrator",
+          "introduction-to-github-worker"
+        ],
+        "purpose": "Live documentation lookup for GitHub Actions syntax and the actions/* the course workflows pin.",
+        "matched": "The five .github/workflows files, which use actions/checkout and the GitHub Actions expression and permissions syntax (Phase 1).",
+        "fallback": "Targeted reads of the workflow files plus docs.github.com links already cited in the course prose."
+      },
+      {
+        "name": "deepwiki",
+        "type": "mcp",
+        "agents": [
+          "introduction-to-github-orchestrator",
+          "introduction-to-github-worker"
+        ],
+        "purpose": "Digest answers about the external GitHub repositories the workflows depend on, without pulling their source into context.",
+        "matched": ".github/dependabot.yml and the pinned third-party actions consumed by the five workflows (Phase 1).",
+        "fallback": "context7, or a targeted read of the action's own README."
+      }
+    ],
+    "grantsDeclined": [
+      {
+        "name": "serena",
+        "reason": "Phase 3 Tool Assignment rubric, v3.6.1 precondition: Serena is granted ONLY where its language servers cover the project's primary language. This project's primary language is Markdown and YAML, both named in the spec's known-uncovered list. The grant would still cost its schema every session and silently degrade to file search, which semble already does better. semble is granted in its place. Recorded so a future run does not re-litigate this."
+      },
+      {
+        "name": "frontend-design",
+        "reason": "Not installed (see capabilities.failures) and, independently, this project has no UI surface, so no agent's duties would invoke it."
+      }
+    ],
+    "failures": [
+      {
+        "name": "frontend-design",
+        "date": "2026-09-05",
+        "symptom": "Could not be installed. `/plugin` is unavailable in this remote Claude Code environment, and the bootstrap session's attempt to shell out to the plugin CLI was denied by the auto-mode permission classifier.",
+        "diagnosis": "Environment limitation, not a project or network fault. Skills cost zero context until invoked, so the absence is a pure capability loss with no ongoing tax. This project has no UI surface, so nothing here would have invoked it regardless.",
+        "retry": "claude plugin install frontend-design@claude-plugins-official"
+      },
+      {
+        "name": "phaneslight-plugin-hooks",
+        "date": "2026-09-05",
+        "symptom": "The three enforcement hooks (hook-stamp-guard, hook-size-check, hook-ledger-status) are installed to .phaneslight/scripts/ and verified, but are NOT registered and will not fire.",
+        "diagnosis": "From v3.7.0 hook registration lives in the PhanesLight plugin's own hooks/hooks.json, not in the project's .claude/settings.json. This bootstrap ran from a clone of the plugin repository because `/plugin` is unavailable in this remote environment, so no plugin is enabled and nothing registers the hooks. The mechanical-enforcement layer (Section II, Procedure in Scripts, Judgment in Prompts) is therefore inert until the plugin is installed locally. The scripts themselves are correct and carry the project-root refusal, so they arm with no further work the moment the plugin is enabled.",
+        "retry": "In a local Claude Code session: /plugin marketplace add Aloim/phaneslightplugin && /plugin install phaneslight@phaneslight, then restart the session to arm the hooks."
+      }
+    ]
+  },
+  "notes": {
+    "testTree": "Phase 2.5 Step 1b (tests/ scaffolding) was deliberately not performed. This repository is courseware with no source code and no test runner; a tests/ tree here would be inert scaffolding. Recorded as a scope decision taken by the user at bootstrap, not as an omission.",
+    "stampedTrees": "stampedTrees is deliberately limited to the documentation root. The course content trees (.github/steps/, .github/workflows/) are NOT stamped: new-file applies the module stamp `# <module> | <description>` to non-docRoot targets, and in a learner-facing .md file that line renders as an H1 heading, corrupting the course content the repository exists to deliver. Guarding those trees would break the product to enforce a convention it does not need."
+  }
+}

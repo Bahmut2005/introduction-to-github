@@ -1,0 +1,37 @@
+# phaneslight workflow | Change a course automation workflow's trigger, gating or action pin.
+name: workflow-automation-change
+kind: change
+tier: T2
+trigger: "A request to change when a step fires, what it gates on, or which action version it pins."
+
+scope:
+  touches: [workflows]
+  promote_to_T3_if:
+    - "The change alters a step number in any position (filename, from_step, to_step, cursor)."
+
+steps:
+  - id: 1
+    do: "Load the architecture overview, documentation/registry/workflows.md, and .github/workflows/CLAUDE.md."
+    by: orchestrator
+  - id: 2
+    do: "Read ALL five workflow files, not just the target. They share one shape, and a change that breaks the shape in one file is a change that will be copied into the others later."
+    by: orchestrator
+  - id: 3
+    do: "Where the change touches Actions syntax you are not certain of, consult context7 rather than guessing. Where it touches skills/action-update-step or actions/checkout behaviour, consult deepwiki."
+    by: "orchestrator or worker"
+  - id: 4
+    do: "Apply. Multi-file or multi-edit changes go through `batch-apply` and the Batched Injection Protocol; a single one-line edit does not need it."
+    by: "orchestrator or worker"
+  - id: 5
+    do: "Closure. Report NO-SUCH-COMMAND for duty 2, then verify: YAML parses; the is_template guard is intact in every file; from_step/to_step/cursor still agree; permissions still include contents: write."
+    by: closure
+
+acceptance:
+  - "All five workflows still parse as YAML."
+  - "`!github.event.repository.is_template` is present in every workflow."
+  - "Every from_step/to_step pair still chains 0 → 1 → 2 → 3 → 4 → X with a step file at each target."
+  - "Anything requiring an actual workflow run is reported UNVERIFIED with the reason, never as a pass."
+
+failure_modes_closed:
+  - "Dropping the is_template guard to test locally, which makes the template run its own course. Use workflow_dispatch instead."
+  - "Claiming a workflow works because it looks right. It cannot be executed from this repository. Say so."

@@ -1,0 +1,26 @@
+# phaneslight workflow | Review a Dependabot bump of a pinned GitHub Action.
+name: dependency-bump
+kind: change
+tier: T1-T2
+trigger: "Dependabot opens a PR bumping actions/checkout or skills/action-update-step (monthly, github-actions ecosystem)."
+
+steps:
+  - id: 1
+    do: "Read the action's release notes for the version range being crossed. Use deepwiki for a digest rather than pulling the action's source into context."
+    by: "orchestrator or worker"
+  - id: 2
+    do: "Decide whether the bump is a major crossing. skills/action-update-step is the course's transition mechanism: a major bump to it can change the from_step/to_step contract and break every step at once."
+    by: orchestrator
+  - id: 3
+    do: "T1 for a patch or minor bump with no contract change: approve, one-line session summary entry. T2 for a major crossing: read every workflow's usage against the new contract before approving."
+    by: orchestrator
+  - id: 4
+    do: "Verify the workflows still parse and the guard is intact. Report that runtime behaviour is UNVERIFIED from this repository."
+    by: closure
+
+acceptance:
+  - "The version crossing was actually read, not assumed from the semver shape."
+  - "A major bump to skills/action-update-step was checked against all five call sites."
+
+failure_modes_closed:
+  - "Rubber-stamping a major bump because CI is green. There is no CI here that exercises these workflows."

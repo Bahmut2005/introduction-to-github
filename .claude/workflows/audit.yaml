@@ -1,0 +1,37 @@
+# phaneslight workflow | RECURRING MAINTENANCE. Conformance sweep against one named discipline.
+name: audit
+kind: maintenance
+tier: T2
+trigger_type: schedule-or-condition
+trigger: "Every 10th session, or when register-check reports SOFT-BREACH, or on demand naming the discipline."
+analysis_heavy: true
+mandate: "This dispatch is analysis-heavy by construction and MUST carry semble. An auditor without it reverts to the repo-wide Grep sweep the tool rubric exists to prevent."
+normal_outcome: "Finding nothing. A clean sweep is a successful sweep, never grounds for skipping the next one."
+
+disciplines:
+  - name: doc-discipline
+    check: "node .phaneslight/scripts/cli.js doc-check, plus doc-index freshness."
+  - name: chain-coherence
+    check: "Every workflow's from_step/to_step against the step files and the cursor. This project's highest-value audit."
+  - name: link-integrity
+    check: "Every relative link and image reference in README.md and .github/steps/*.md resolves."
+  - name: capability-register-accuracy
+    check: "Every line of CLAUDE.md's Installed Capability Register still names a real Phase 1 match and a reachable capability."
+  - name: single-writer-adherence
+    check: "No artifact was written by an agent other than its declared single writer."
+
+steps:
+  - id: 1
+    do: "Name the discipline being audited. An audit without a named discipline is a fishing trip."
+    by: orchestrator
+  - id: 2
+    do: "Sweep with semble, then verify every hit by reading the actual file. A semble hit is a pointer, not evidence."
+    by: "orchestrator or worker"
+  - id: 3
+    do: "Grade findings on the severity ladder and return them. Fixes are separate work through the matching change workflow."
+    by: orchestrator
+
+acceptance:
+  - "The discipline was named up front."
+  - "Every reported finding cites file:line and was confirmed by reading the file."
+  - "The run reported its result even when that result was 'nothing found'."

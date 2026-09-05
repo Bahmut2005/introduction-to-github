@@ -1,0 +1,3 @@
+2026-09-05 | Phase 0 STARTED (initial setup run, PhanesLight v3.7.2) | ledger opened
+2026-09-05 | Phase 0 DONE → next Phase 1 | MCP x4 installed and reachable; frontend-design install FAILED (no /plugin), recorded; plugin hooks unregistered, recorded
+2026-09-05 | Phase 1 DONE → next Phase 2 | courseware repo; modules workflows/steps/images; no build, no tests, no API, no UI

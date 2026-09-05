@@ -1,0 +1,27 @@
+#!/bin/sh
+# phaneslight-template v3.7.2 phaneslight
+# Dispatcher. Routes `phaneslight <subcommand> [args]` to the sibling script in this directory.
+# Resolves siblings by this script's own location, so it works from any working directory.
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+if [ "$#" -lt 1 ]; then
+  echo "phaneslight: subcommands: new-file loc-check doc-check register-check doc-index module-list list-apis regen-registry api-diff preflight update-preflight install-templates scaffold ledger hook-ledger-status manifest-write census-diff repo-manifest batch-apply"
+  exit 0
+fi
+
+sub=$1
+shift
+
+# There is no by-name refusal block any more (v3.7.2). It existed because the v3.4 bootstrap
+# set was Windows only and a deferred command needed to refuse rather than look like a typo;
+# all ten now have POSIX siblings, so an unknown name falls through to the unknown-subcommand
+# refusal below, which is where a typo belongs.
+
+if [ -f "$here/$sub.sh" ]; then
+  exec sh "$here/$sub.sh" "$@"
+elif [ -f "$here/$sub" ]; then
+  exec sh "$here/$sub" "$@"
+else
+  echo "phaneslight: unknown subcommand '$sub' (no $sub.sh in $here)" >&2
+  exit 1
+fi

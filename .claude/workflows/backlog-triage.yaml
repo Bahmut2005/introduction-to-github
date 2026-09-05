@@ -1,0 +1,30 @@
+# phaneslight workflow | RECURRING MAINTENANCE. Re-grade open findings against the code as it stands now.
+name: backlog-triage
+kind: maintenance
+tier: T1-T2
+trigger_type: schedule-or-condition
+trigger: "Every 5th session, or whenever the CLAUDE.local.md register carries more than two open Blockers lines."
+normal_outcome: >-
+  Finding nothing. That is a SUCCESSFUL run and must never be treated as a wasted one. This
+  workflow reports every time it runs, including when it has nothing to say, so that silence is
+  never mistaken for "it ran and was fine".
+
+steps:
+  - id: 1
+    do: "Collect open items from three places: session-summary TODO sections (index-first via documentation/session-summaries/_index.md, never a directory scan), the register's Blockers: lines, and deferred decision-matrix items in the handover."
+    by: orchestrator
+  - id: 2
+    do: "Re-grade each on the severity ladder against the repository AS IT IS NOW. A deferred item may have been fixed incidentally, or may have grown."
+    by: orchestrator
+  - id: 3
+    do: "Emit the re-graded list. READ AND GRADE ONLY: this pass raises findings, it never acts on them."
+    by: orchestrator
+
+acceptance:
+  - "Every open item was re-read against current files, not against its own description."
+  - "The output is a list, not a change set. Zero files modified."
+  - "A run that found nothing said so explicitly."
+
+failure_modes_closed:
+  - "Carrying a CRIT forward for months because nobody re-read it."
+  - "Fixing things during triage, which turns a cheap read-only pass into an unplanned change."

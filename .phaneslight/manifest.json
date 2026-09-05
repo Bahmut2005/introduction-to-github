@@ -1,0 +1,344 @@
+{
+  "manifestVersion": 1,
+  "phanesLightVersion": "3.7.2",
+  "stampedAt": "2026-09-05T12:48:57Z",
+  "projectSlug": "introduction-to-github",
+  "artifacts": [
+    {
+      "path": ".claude/agents/introduction-to-github-closure.md",
+      "class": "agent",
+      "sha256": "8e34bd5f6eb597bd6c23f345f11664bbc29fd22b00238a97b62870d6911d9e93",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/agents/introduction-to-github-mechanic.md",
+      "class": "agent",
+      "sha256": "74555a5f58942429bccf6a0404b40098f9d9058844f4b1cf798368b147e1f376",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/agents/introduction-to-github-orchestrator.md",
+      "class": "agent",
+      "sha256": "ffaf9a4d7e671d8a4e9b0a0e055e534f02e698a62d7e5249af06bda362e6897b",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/agents/introduction-to-github-reviewer.md",
+      "class": "agent",
+      "sha256": "16efaa0632f756dbb4f6df2299869308fa5a2a392823f75f1dd9056232cfaae5",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/agents/introduction-to-github-worker.md",
+      "class": "agent",
+      "sha256": "796566310035000a7aea77f3f1fb9386434b3f41e3b7a365c8957777abce8f12",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/template/agent-definition.md",
+      "class": "template",
+      "sha256": "c40c1a98e09c58cf30416372998710f7e0bbb9d2d6a3f060a4b79c6907fe4080",
+      "templateSha256": "c40c1a98e09c58cf30416372998710f7e0bbb9d2d6a3f060a4b79c6907fe4080",
+      "customized": false
+    },
+    {
+      "path": ".claude/template/doc-header.md",
+      "class": "template",
+      "sha256": "3d9bcafa6853e9fdfa31d23c3a031b017423717217e8b1aa6378ea938e7a2bfb",
+      "templateSha256": "3d9bcafa6853e9fdfa31d23c3a031b017423717217e8b1aa6378ea938e7a2bfb",
+      "customized": false
+    },
+    {
+      "path": ".claude/template/readme-docs.md",
+      "class": "template",
+      "sha256": "65fbdf2ab6f6c7b7315e2886d103f53039ff21e2ec351a8250d30f9aa8c2eba9",
+      "templateSha256": "65fbdf2ab6f6c7b7315e2886d103f53039ff21e2ec351a8250d30f9aa8c2eba9",
+      "customized": false
+    },
+    {
+      "path": ".claude/template/readme-tests.md",
+      "class": "template",
+      "sha256": "c13726606b9e1cce88a0cf9732e3852aeb10af58655074ca47e21f6a0b5aef96",
+      "templateSha256": "c13726606b9e1cce88a0cf9732e3852aeb10af58655074ca47e21f6a0b5aef96",
+      "customized": false
+    },
+    {
+      "path": ".claude/template/report.md",
+      "class": "template",
+      "sha256": "7062fb3cdfc59ccc52385ce5ac54b74bb3ee428fc08672fb9a4f2da3021b0796",
+      "templateSha256": "7062fb3cdfc59ccc52385ce5ac54b74bb3ee428fc08672fb9a4f2da3021b0796",
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/add-or-renumber-step.yaml",
+      "class": "workflow",
+      "sha256": "01a5a991285bb84a72e83c07454cfb1c54a94cd96e4881160f6c6a6fcf647d06",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/audit.yaml",
+      "class": "workflow",
+      "sha256": "bf3ca7aaa8e7d8482e04547c464ce6d7f65d02d4c4353c3f9ecb0275ef2a31ef",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/backlog-triage.yaml",
+      "class": "workflow",
+      "sha256": "41a43c3e0e3d2acf383690b5108f49ed80a7aae2c6a3e69b27267387bbc927b6",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/dependency-bump.yaml",
+      "class": "workflow",
+      "sha256": "399cf80f4c308e3c4d188658986c333a68bb660c774bc854704adccffc99d08b",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/screenshot-refresh.yaml",
+      "class": "workflow",
+      "sha256": "2e7e47d8a2655d3011f42f9209838da4071307d511d7a4c8a9c3102cb2b5233b",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/snapshot-refresh.yaml",
+      "class": "workflow",
+      "sha256": "9112b8a197daf609e768e7e81135592b1b52dbbe540f044b1957e702143d9966",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/step-content-edit.yaml",
+      "class": "workflow",
+      "sha256": "3d12553f12c5497b4578e8c45fd242959f70b3bffe5c6c3bfeb2156169148831",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".claude/workflows/workflow-automation-change.yaml",
+      "class": "workflow",
+      "sha256": "ccecbb9243ef479204bc00c6c5a58d3a887fce52a1df024a2aa794405154df9f",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".github/steps/CLAUDE.md",
+      "class": "config-block",
+      "sha256": "8898b3b791d00d72bb9a5954d5266eca369123f95a5b694fcf58188e3ed5a87b",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".github/workflows/CLAUDE.md",
+      "class": "config-block",
+      "sha256": "dff1e11c0335f4a656ec9daf5558c707ed01d35aedb0ee11d67419b2e89be051",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/api-diff.sh",
+      "class": "script",
+      "sha256": "82eb66cb8d442da5a07b762c5f6dbb4120e5a26f5c2e6da0cebf7051667d3de4",
+      "templateSha256": "82eb66cb8d442da5a07b762c5f6dbb4120e5a26f5c2e6da0cebf7051667d3de4",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/batch-apply.sh",
+      "class": "script",
+      "sha256": "d54d7654baa7e02f5d03460a9e83b9d84b78b70c9bcb65a77ccfe91b5f8dc99d",
+      "templateSha256": "d54d7654baa7e02f5d03460a9e83b9d84b78b70c9bcb65a77ccfe91b5f8dc99d",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/census-diff.sh",
+      "class": "script",
+      "sha256": "a47c879d14a01b157f7c4d3b0fd70fd2299a3cd57392708d9e9ff3d71178adf1",
+      "templateSha256": "a47c879d14a01b157f7c4d3b0fd70fd2299a3cd57392708d9e9ff3d71178adf1",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/cli.js",
+      "class": "script",
+      "sha256": "efe776b1072d76790793529eee1760fd9fead44a7e0fa53c2e13f073faa436c7",
+      "templateSha256": "efe776b1072d76790793529eee1760fd9fead44a7e0fa53c2e13f073faa436c7",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/doc-check.sh",
+      "class": "script",
+      "sha256": "768d63f24326cfb88876e75ea3cdda7faa96acf6517f5c1a9c251c7c380e93b7",
+      "templateSha256": "768d63f24326cfb88876e75ea3cdda7faa96acf6517f5c1a9c251c7c380e93b7",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/doc-index.sh",
+      "class": "script",
+      "sha256": "e370aec6db4db25002e8c09df5f12543aa57b8b9ece88b847bc463c5fba771b4",
+      "templateSha256": "e370aec6db4db25002e8c09df5f12543aa57b8b9ece88b847bc463c5fba771b4",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/hook-ledger-status.sh",
+      "class": "hook",
+      "sha256": "a3d8ed133dcf3c7b6075019027854b66fad7b6689f710adac733a16a48e8b6a5",
+      "templateSha256": "a3d8ed133dcf3c7b6075019027854b66fad7b6689f710adac733a16a48e8b6a5",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/hook-size-check.sh",
+      "class": "hook",
+      "sha256": "cbbd4e707467fb92fe120eea9c77c5ce11495402e649323c070345a9b96bcf4f",
+      "templateSha256": "cbbd4e707467fb92fe120eea9c77c5ce11495402e649323c070345a9b96bcf4f",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/hook-stamp-guard.sh",
+      "class": "hook",
+      "sha256": "61220a330c91a29065bb5de12b5c813e7ae5284ca0902b0fce39953c59bc2547",
+      "templateSha256": "61220a330c91a29065bb5de12b5c813e7ae5284ca0902b0fce39953c59bc2547",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/install-templates.sh",
+      "class": "script",
+      "sha256": "3bd2cae7cc9675fe84b984378c33bc5fe5b258e7fb2311c9264e6c1ceca0ae39",
+      "templateSha256": "3bd2cae7cc9675fe84b984378c33bc5fe5b258e7fb2311c9264e6c1ceca0ae39",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/ledger.sh",
+      "class": "script",
+      "sha256": "5554735ea811d70ff802ac025299b1e060aa807cc3fb5791bf4f5cf3d0fe4b35",
+      "templateSha256": "5554735ea811d70ff802ac025299b1e060aa807cc3fb5791bf4f5cf3d0fe4b35",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/list-apis.sh",
+      "class": "script",
+      "sha256": "dfc9a5fa2bdb9e1d850d624500da57bbaa7430c834ec83a15b142bff0efc2aab",
+      "templateSha256": "dfc9a5fa2bdb9e1d850d624500da57bbaa7430c834ec83a15b142bff0efc2aab",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/loc-check.sh",
+      "class": "script",
+      "sha256": "469fe4ee522032dc8d4fbef9972b82c61fc8cee1a64582aef48f6d47a2b25def",
+      "templateSha256": "469fe4ee522032dc8d4fbef9972b82c61fc8cee1a64582aef48f6d47a2b25def",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/manifest-write.sh",
+      "class": "script",
+      "sha256": "8ec19b93dc96875a18922250ba34340232004d740229037ff387fcc459ec6b26",
+      "templateSha256": "8ec19b93dc96875a18922250ba34340232004d740229037ff387fcc459ec6b26",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/module-list.sh",
+      "class": "script",
+      "sha256": "272b747fbf80363c2172b4cda4369be105dc0a05b131c3944225c1824266783c",
+      "templateSha256": "272b747fbf80363c2172b4cda4369be105dc0a05b131c3944225c1824266783c",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/new-file.sh",
+      "class": "script",
+      "sha256": "c0816814371f78bc4a9bac8a2841dd32d41c02093e31ef5f15bf5d913fc035de",
+      "templateSha256": "c0816814371f78bc4a9bac8a2841dd32d41c02093e31ef5f15bf5d913fc035de",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/phaneslight",
+      "class": "script",
+      "sha256": "963307be5706c9e6dca7d1935fcc1949b98cd628c877711c02cbd8369625a00a",
+      "templateSha256": "963307be5706c9e6dca7d1935fcc1949b98cd628c877711c02cbd8369625a00a",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/preflight.sh",
+      "class": "script",
+      "sha256": "1dcff3c915714dc6d95781f3971d74a9582d52b309a9213b60e06c12ffce2204",
+      "templateSha256": "1dcff3c915714dc6d95781f3971d74a9582d52b309a9213b60e06c12ffce2204",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/regen-registry.sh",
+      "class": "script",
+      "sha256": "dc595d6cf352effa07b79ecf8aa6af310650f69f5e5a84c50e8d59023f732ad8",
+      "templateSha256": "dc595d6cf352effa07b79ecf8aa6af310650f69f5e5a84c50e8d59023f732ad8",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/register-check.sh",
+      "class": "script",
+      "sha256": "51404f72469411f53fffe3c860078f85b9d47625e322b00fc5df5f3902877184",
+      "templateSha256": "51404f72469411f53fffe3c860078f85b9d47625e322b00fc5df5f3902877184",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/repo-manifest.sh",
+      "class": "script",
+      "sha256": "a61319f0d7d87eea8b6eb9dbfa53e00fdc49911e9f45a80e0db2910a2ea5940d",
+      "templateSha256": "a61319f0d7d87eea8b6eb9dbfa53e00fdc49911e9f45a80e0db2910a2ea5940d",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/scaffold.sh",
+      "class": "script",
+      "sha256": "267d2296e844e3d5b3f380655482f16573d7fccf058a478bd5b0339493f74e63",
+      "templateSha256": "267d2296e844e3d5b3f380655482f16573d7fccf058a478bd5b0339493f74e63",
+      "customized": false
+    },
+    {
+      "path": ".phaneslight/scripts/update-preflight.sh",
+      "class": "script",
+      "sha256": "3ebbe7987c36c68bc638b907776c55d32a67649aaf9e78b33ebd4fb6bb789cec",
+      "templateSha256": "3ebbe7987c36c68bc638b907776c55d32a67649aaf9e78b33ebd4fb6bb789cec",
+      "customized": false
+    },
+    {
+      "path": "CLAUDE.md",
+      "class": "config-block",
+      "sha256": "32c1dbab90b3f22f9737182156dc8343c0b036bd13d01a74928e70263cb317d3",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": "documentation/architecture/README.md",
+      "class": "doc-scaffold",
+      "sha256": "862d8cf3d3a174b57d0ede2eb2aa78d5ca4323580e3093ef28beeefac8c7df0e",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": "documentation/registry/README.md",
+      "class": "doc-scaffold",
+      "sha256": "e2c619f886771278806d875fac6c6457b9076a87e89f1dec35f98a8366b8a6c8",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": "documentation/session-summaries/README.md",
+      "class": "doc-scaffold",
+      "sha256": "01d882573c73c2791e59a0eb027c2b8a62808a9a24b330a6a3c56d3f2bdfda6e",
+      "templateSha256": null,
+      "customized": false
+    },
+    {
+      "path": "images/CLAUDE.md",
+      "class": "config-block",
+      "sha256": "f641655f6545ca37bf964fdaa0b0872b9952eab5b48d5fb077d1495744d2c012",
+      "templateSha256": null,
+      "customized": false
+    }
+  ]
+}

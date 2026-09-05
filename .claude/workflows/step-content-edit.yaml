@@ -1,0 +1,40 @@
+# phaneslight workflow | Edit the prose of an existing course step.
+# Task sequence only. The lineup, write rights, spawn grants and escalation routing are fixed
+# by CLAUDE.md's Pinned Directives block and win on any conflict with this file.
+name: step-content-edit
+kind: change
+tier: T1-T2
+trigger: "A request to reword, correct, clarify or re-link the prose of an existing step."
+
+scope:
+  touches: [steps]
+  promote_to_T3_if:
+    - "The edit adds, removes or renumbers a step (that touches workflows and the cursor too)."
+    - "The edit changes which screenshot a step uses (that touches images too)."
+
+steps:
+  - id: 1
+    do: "Triage the tier. Load the architecture overview; for T2 also load documentation/registry/steps.md."
+    by: orchestrator
+  - id: 2
+    do: "Read the target step file AND the workflow that publishes it. A workflow named for step N publishes step N+1's prose; confirm you have the right pair before editing."
+    by: orchestrator
+    note: "Under ~2,000 tokens of material, read it directly. Do not dispatch a mechanic to fetch two small files."
+  - id: 3
+    do: "Apply the edit. These files are learner-facing and excluded from stampedTrees, so create or edit them directly rather than via `new-file`, and name every edit in the report."
+    by: "orchestrator, or worker when dispatched"
+  - id: 4
+    do: "Verify: every relative link and image reference in the edited file resolves to a file that exists."
+    by: "the writing agent, before returning"
+  - id: 5
+    do: "T2 only: closure at step close. Duty 2 has no command here and MUST report NO-SUCH-COMMAND, then run the five substitute checks in CLAUDE.md."
+    by: closure
+
+acceptance:
+  - "Every link and image reference in the edited file resolves."
+  - "The step still describes exactly one learner action."
+  - "Prose, publishing workflow and cursor value still agree."
+
+failure_modes_closed:
+  - "Editing prose for step N while reading workflow N, which publishes N+1. Step 2 forces the pairing."
+  - "Silently breaking an image link. Step 4 is mechanical and cheap; do not skip it."

@@ -1,0 +1,36 @@
+# phaneslight workflow | RECURRING MAINTENANCE. Replace an architecture snapshot whose credibility has decayed.
+name: snapshot-refresh
+kind: maintenance
+tier: T2-T3
+trigger_type: schedule-or-condition
+trigger: "When the newest snapshot folder under documentation/architecture/ is more than 8 weeks old, or before any major refactor, or on demand."
+purpose: >-
+  This is the workflow that discharges the bootstrap snapshot's standing TODO. Without it, that
+  snapshot stays scaffolding forever while reading like architecture.
+normal_outcome: "Often 'the existing snapshot still holds'. Record that verdict and its date; do not write a new folder for an unchanged repository."
+
+steps:
+  - id: 1
+    do: "Read the existing snapshot's date and its own decay warning. Snapshots are dated, decreasingly-reliable artifacts by design."
+    by: orchestrator
+  - id: 2
+    do: "Re-derive the current state from the repository, not from the old snapshot. Re-read, never recall."
+    by: "orchestrator, or mechanic for bulky retrieval"
+  - id: 3
+    do: "Substantive change → new dated folder under documentation/architecture/<YYYY-MM-DD>_<label>/. Minor in-place correction → rename the folder to the correction date so decay calculations stay meaningful."
+    by: orchestrator
+  - id: 4
+    do: "Carry the verbatim bootstrap preamble ONLY if the new snapshot is still inference-grade. A properly-considered snapshot drops it and says so."
+    by: orchestrator
+  - id: 5
+    do: "Run doc-index. Closure flags ceiling breaches; the file's single writer performs any split."
+    by: closure
+
+acceptance:
+  - "No bare negatives. Every negative names the method and its bound and carries VERIFY before relying on this."
+  - "The prose was searched before any negative was written."
+  - "Every TODO in the old snapshot was either discharged or deliberately carried forward with a reason."
+
+failure_modes_closed:
+  - "Editing the old snapshot in place, which destroys the decay record the whole discipline depends on."
+  - "Writing a confident negative that a one-query prose search would have disproved."
